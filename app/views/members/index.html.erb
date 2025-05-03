@@ -21,6 +21,7 @@
       <th>組</th>
       <th>年齢</th>
       <th>説明</th>
+      <th>操作</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,10 @@
         <td><%= member.classroom %>組</td>
         <td><%= member.age %>歳</td>
         <td><%= member.text %></td>
+        <td>
+          <%= link_to "修正", edit_member_path(member) %>
+          <%= link_to "削除", member_path(member), data: {turbo_method: :delete, turbo_confirm: '本当に削除しますか？'} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
