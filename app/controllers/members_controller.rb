@@ -41,7 +41,7 @@ class MembersController < ApplicationController
 
   private
   def member_params # スコープ内で使うパラメータ定義
-    params.require(:member).permit(:name, :grade, :classroom, :age, :text)
+    params.require(:member).permit(:name, :grade, :classroom, :age, :committee, :text)
   end
   
 end

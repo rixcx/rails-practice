@@ -20,6 +20,7 @@
       <th>学年</th>
       <th>組</th>
       <th>年齢</th>
+      <th>委員会</th>
       <th>説明</th>
       <th>操作</th>
     </tr>
@@ -32,6 +33,7 @@
         <td><%= member.grade %>年</td>
         <td><%= member.classroom %>組</td>
         <td><%= member.age %>歳</td>
+        <td><%= member.committee %></td>
         <td><%= member.text %></td>
         <td>
           <%= link_to "修正", edit_member_path(member) %>

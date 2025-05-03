@@ -24,17 +24,32 @@
   </div>
 
   <div>
-    <%= form.label :grade, "組" %><br>
+    <%= form.label :classroom, "組" %><br>
     <%= form.select :classroom, [["い", "い"],["ろ", "ろ"],["は", "は"]], include_blank: "選択してください" %>
   </div>
 
   <div>
-    <%= form.label :grade, "年齢" %><br>
+    <%= form.label :age, "年齢" %><br>
     <%= form.number_field :age %>
   </div>
 
   <div>
-    <%= form.label :grade, "説明" %><br>
+    <%= form.label :committee, "委員会" %><br>
+    <%= form.select :committee, [
+      ["会計委員会", "会計委員会"],
+      ["作法委員会", "作法委員会"],
+      ["図書委員会", "図書委員会"],
+      ["生物委員会", "生物委員会"],
+      ["体育委員会", "体育委員会"],
+      ["保健委員会", "保健委員会"],
+      ["用具委員会", "用具委員会"],
+      ["火薬委員会", "火薬委員会"],
+      ["学級委員長委員会", "学級委員長委員会"],
+    ], include_blank: "選択してください" %>
+  </div>
+
+  <div>
+    <%= form.label :text, "説明" %><br>
     <%= form.text_field :text %>
   </div>
 
