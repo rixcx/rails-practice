@@ -11,6 +11,24 @@
 
 <p><%= link_to "新規キャラクター登録", new_member_path %></p>
 
+<%= form_with url: members_path, method: :get, local: true do |form| %>
+<!-- form_withは非同期通信を行うメソッド、local: trueと引数を渡す事で通常のHTTPリクエストになる -->
+
+  <div>
+    <%= form.label :grade, "学年で絞り込み" %>
+    <%= form.select :grade, Member.distinct.pluck(:grade), include_blank: "すべて" %>
+  </div>
+  <div>
+    <%= form.label :classroom, "組で絞り込み" %>
+    <%= form.select :classroom, Member.distinct.pluck(:classroom), include_blank: "すべて" %>
+  </div>
+  <div>
+    <%= form.label :committee, "委員会で絞り込み" %>
+    <%= form.select :committee, Member.distinct.pluck(:committee), include_blank: "すべて" %>
+  </div>
+  <%= form.submit "絞り込む" %><!-- パラメータにテキスト表示されるのでHTML調整 -->
+<% end %>
+
 <!-- <%= debug @members %> -->
 <table class="table">
   <thead>

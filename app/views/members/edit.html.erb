@@ -25,7 +25,7 @@
 
   <div>
     <%= form.label :classroom, "組" %><br>
-    <%= form.select :classroom, [["い", "い"],["ろ", "ろ"],["は", "は"]], include_blank: "選択してください" %>
+    <%= form.select :classroom, Member.distinct.pluck(:classroom), include_blank: "選択してください" %>
   </div>
 
   <div>

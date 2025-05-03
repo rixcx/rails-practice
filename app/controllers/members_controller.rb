@@ -1,6 +1,22 @@
 class MembersController < ApplicationController
   def index
     @members = Member.all # Memberモデルの全レコードを取得してインスタンス変数に格納
+
+  # 学年でフィルタ
+  if params[:grade].present?
+    @members = @members.where(grade: params[:grade])
+  end
+
+  # 組でフィルタ
+  if params[:classroom].present?
+    @members = @members.where(classroom: params[:classroom])
+  end
+
+  # 委員会でフィルタ
+  if params[:committee].present?
+    @members = @members.where(committee: params[:committee])
+  end
+
   end
   
   def new
