@@ -3,7 +3,7 @@ class MembersController < ApplicationController
     @members = Member.all # Memberモデルの全レコードを取得してインスタンス変数に格納
 
     # 学年でフィルタ
-    if params[:grade].present?
+    if params[:grade].present? #値が「nilでない」「存在するか？」を判定
       @members = @members.where(grade: params[:grade])
     end
 
