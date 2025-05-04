@@ -16,15 +16,15 @@
 
   <div>
     <%= form.label :grade, "学年で絞り込み" %>
-    <%= form.select :grade, Member.distinct.pluck(:grade), include_blank: "すべて" %>
+    <%= form.select :grade, options_for_select(Member.distinct.pluck(:grade), params[:grade]), include_blank: "すべて" %>
   </div>
   <div>
     <%= form.label :classroom, "組で絞り込み" %>
-    <%= form.select :classroom, Member.distinct.pluck(:classroom), include_blank: "すべて" %>
+    <%= form.select :classroom, options_for_select(Member.distinct.pluck(:classroom), params[:classroom]), include_blank: "すべて" %>
   </div>
   <div>
     <%= form.label :committee, "委員会で絞り込み" %>
-    <%= form.select :committee, Member.distinct.pluck(:committee), include_blank: "すべて" %>
+    <%= form.select :committee, options_for_select(Member.distinct.pluck(:committee), params[:committee]), include_blank: "すべて" %>
   </div>
   <%= form.submit "絞り込む" %><!-- パラメータにテキスト表示されるのでHTML調整 -->
 <% end %>
